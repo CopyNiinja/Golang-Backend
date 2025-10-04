@@ -20,4 +20,6 @@ func main() {
 	fmt.Println(template)
 
 	//run code with this line: go run templates/html-templates.go > index.html
+	//  > → redirects the program’s standard output (stdout) to a file.
+  
 }
