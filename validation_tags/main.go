@@ -64,4 +64,13 @@ func main() {
     } else {
         fmt.Println("All validations passed!")
     }
+
+	//multiple validation error print
+	err := validate.Struct(user)
+    if err != nil {
+        fmt.Println("User validation failed:")
+        for _, e := range err.(validator.ValidationErrors) {
+            fmt.Printf("  Field '%s' failed tag '%s'\n", e.Field(), e.Tag())
+        }
+    }
 }
